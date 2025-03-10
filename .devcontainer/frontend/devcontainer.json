@@ -25,7 +25,8 @@
         "austenc.tailwind-docs",
         "chriskirknielsen.visubezier",
         "xabikos.JavaScriptSnippets",
-        "ms-azuretools.vscode-docker"
+        "ms-azuretools.vscode-docker",
+        "Angular.ng-template"
       ]
     }
   }
