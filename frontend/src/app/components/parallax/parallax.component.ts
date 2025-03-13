@@ -17,7 +17,7 @@ export class ParallaxComponent {
   private animationFrameId: number | null = null;
   private skip = false;
 
-  constructor(private ngZone: NgZone) {}
+  // constructor(private ngZone: NgZone) {}
 
   ngOnInit() {
     // this.ngZone.runOutsideAngular(() => {
