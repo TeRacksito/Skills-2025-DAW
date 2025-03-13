@@ -11,19 +11,31 @@ export class ParallaxComponent {
   @Input() imgSrc: string = '';
   @Input() depth: number = 0;
 
+  parallaxTranslation: number = 0;
+  // parallaxTranslation: Be
+
   private animationFrameId: number | null = null;
+  private skip = false;
 
   constructor(private ngZone: NgZone) {}
 
   ngOnInit() {
-    this.ngZone.runOutsideAngular(() => {
-      this.startAnimationLoop();
-    });
+    // this.ngZone.runOutsideAngular(() => {
+    //   this.startAnimationLoop();
+    // });
+    // this.startAnimationLoop();
   }
 
   startAnimationLoop() {
     const animate = () => {
-      this.setParallaxTranslation(0.5 * this.depth);
+      // console.log(this.skip);
+
+      this.skip = !this.skip;
+      if (!this.skip) {
+        this.setParallaxTranslation(0.03 * this.depth);
+
+      };
+      
       this.animationFrameId = requestAnimationFrame(animate);
     };
     this.animationFrameId = requestAnimationFrame(animate);
@@ -35,7 +47,7 @@ export class ParallaxComponent {
     }
   }
 
-  private parallaxTranslation: number = 0;
+  
 
   getParallaxTranslation() {
     return this.parallaxTranslation;

@@ -32,7 +32,7 @@ class CategoriesController extends Controller
 
         $category = Categories::create([
             'name' => $request->name,
-            // "description" => $request->description
+            "description" => $request->description
         ]);
 
         return response()->json($category);

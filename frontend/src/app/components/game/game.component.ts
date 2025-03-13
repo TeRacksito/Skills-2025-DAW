@@ -16,7 +16,7 @@ export class GameComponent {
     this.images = [
       '_11_background.png',
       '_10_distant_clouds.png',
-      '_09_distan_clouds1.png',
+      '_09_distant_clouds1.png',
       '_08_clouds.png',
       '_07_huge_clouds.png',
       '_06_hill2.png',
@@ -27,7 +27,7 @@ export class GameComponent {
       '_01_ground.png'
     ];
 
-    
+
   }
 
 }

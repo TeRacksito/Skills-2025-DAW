@@ -1,4 +1,16 @@
-<div class="flex justify-center items-center h-screen w-full overflow-hidden">
-  <div class="parallax-container relative w-full md:w-4/5 lg:w-3/4 h-[500px] overflow-hidden rounded-lg shadow-lg">
+<div class="flex justify-center items-center w-full overflow-hidden">
+  <div class="max-w-200 parallax-container relative w-full md:w-4/5 lg:w-3/4 h-[500px] overflow-hidden rounded-lg shadow-lg">
+    @for (image of images; track $index) {
+      <app-parallax [imgSrc]="image" [depth]="$index +10" class="block w-100 h-12.5 max-h-15"></app-parallax>
+
+    }
+
+    <div class="w-5 h-35 absolute bg-amber-400 z-100" style="top: 100px; left: 10px;"></div>
+
+    <div class="w-35 h-35 absolute z-100" style="top: 350px; left: 400px;"><img src="carrito.webp" alt=""></div>
+
+
+    <div class="w-35 h-35 absolute z-100" style="top: 400px; left: 100px;"><img src="pngegg.png" alt=""></div>
+    
   </div>
 </div>
