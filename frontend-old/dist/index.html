@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Module 1</title>
+  <link rel="stylesheet" crossorigin href="/assets/index-Chgv-AVI.css">
+</head>
+
+<body>
+
+  <div class="flex flex-col min-h-screen">
+    <header class="bg-white sticky top-0 z-50 shadow-md whitespace-nowrap">
+      <div class="container mx-auto flex items-center justify-between py-4 px-6 gap-1">
+
+
+        <!-- <Overlay isOpen={isOpen} onClose={()=> setIsOpen(false)} /> -->
+        <!-- isOpen block -->
+        <div id="overlay" class="fixed inset-0 bg-black/50 z-40 cursor-pointer backdrop-blur-[1.5px] hidden"
+          onclick="setIsOpen(false)" aria-hidden="true"></div>
+        <!-- isOpen transform translate-x-0 -->
+        <nav id="lateralMenuNav"
+          class="fixed top-0 h-full w-full left-0 sm:w-80 bg-white shadow-lg z-500 transition-transform duration-300 ease-in-out transform -translate-x-full"
+          aria-label="Main Navigation">
+          <button onclick="setIsOpen(false)" class="absolute top-0 right-0 w-full text-gray-700 hover:text-gray-900 p-4 rounded-sm
+            hover:bg-gray-100 transition-colors duration-200 focus:outline-none" aria-label="Close Menu">
+            <i class="fa-solid fa-times"></i>
+          </button>
+          <ul class="flex flex-col mt-16 space-y-6 p-6 overflow-y-auto pb-30 max-h-screen">
+            <li class="space-x-2">
+              <div class="inline-flex flex-col items-start flex-wrap space-x-2 ml-4">
+                <a href="#" class="text-lg text-gray-700 hover:text-orange-500 transition-colors duration-200 text-wrap"
+                  onclick="setIsOpen(false)">
+                  Productos
+                </a>
+
+              </div>
+            </li>
+
+            <li class="space-x-2">
+              <div class="inline-flex flex-col items-start flex-wrap space-x-2 ml-4">
+                <a href="#" class="text-lg text-gray-700 hover:text-orange-500 transition-colors duration-200 text-wrap"
+                  onclick="setIsOpen(false)">
+                  Categorías
+                </a>
+
+              </div>
+            </li>
+
+            <li class="space-x-2">
+              <div class="inline-flex flex-col items-start flex-wrap space-x-2 ml-4">
+                <a href="#" class="text-lg text-gray-700 hover:text-orange-500 transition-colors duration-200 text-wrap"
+                  onclick="setIsOpen(false)">
+                  Eventos
+                </a>
+
+              </div>
+            </li>
+
+            <li class="space-x-2">
+              <div class="inline-flex flex-col items-start flex-wrap space-x-2 ml-4">
+                <a href="#" class="text-lg text-gray-700 hover:text-orange-500 transition-colors duration-200 text-wrap"
+                  onclick="setIsOpen(false)">
+                  Contacto
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
+
+
+        <script>
+          const overlay = document.querySelector("#overlay");
+          const lateralMenuNav = document.querySelector("#lateralMenuNav");
+
+          let isOpen = false;
+
+          function setIsOpen(value) {
+            isOpen = value;
+
+            if (isOpen) {
+              document.body.style.overflow = "hidden";
+
+              overlay.classList.remove("hidden");
+              overlay.classList.add("block");
+
+              lateralMenuNav.classList.remove("-translate-x-full");
+              lateralMenuNav.classList.add("transform translate-x-0");
+
+            } else {
+              document.body.style.overflow = "";
+
+              overlay.classList.add("hidden");
+              overlay.classList.remove("block");
+
+              lateralMenuNav.classList.add("-translate-x-full");
+              lateralMenuNav.classList.remove("transform translate-x-0");
+            }
+          }
+
+          window.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && isOpen) {
+              setIsOpen(false);
+            }
+          });
+
+
+        </script>
+
+
+
+
+
+
+        <a href="#" class="flex items-center text-lg font-bold mx-1 ">
+          <i class="fa-solid fa-shop mr-2"></i>
+          <div class="hidden md:block">Módulo 1</div>
+        </a>
+
+        <button onclick="setIsOpen(true)"
+          class="hidden md:flex space-x-6 items-center justify-between px-4 py-2 rounded-sm hover:bg-gray-100 transition-colors duration-200 gap-2 cursor-pointer">
+          <i class="fa-solid fa-bars"></i>
+          Todas las categorías
+        </button>
+
+        <input type="text" placeholder="Buscar producto o servicio..."
+          class="bg-white w-full px-3 py-2 text-black rounded-md" />
+
+        <div class="flex items-center md:gap-4">
+
+          <a href="#"
+            class="flex items-center space-x-4 px-4 py-2 rounded-sm hover:bg-gray-100 transition-colors duration-200 gap-2">
+            <i class="fa-solid fa-user"></i>
+          </a>
+
+
+          <a href="#"
+            class="flex items-center px-4 py-2 rounded-sm hover:bg-gray-100 transition-colors duration-200 gap-3">
+            <div class="relative">
+              <i class="fa-solid fa-shopping-cart"></i>
+              <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full px-2">
+                2
+              </span>
+            </div>
+            <div class="hidden md:block">Mi cesta</div>
+          </a>
+          <button onclick="setIsOpen(true)"
+            class="md:hidden focus:outline-none px-4 py-2 rounded-sm hover:bg-gray-100 transition-colors duration-200">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-6">
+
+      <h1 class="text-2xl">Vea nuestros productos</h1>
+
+      <div class="relative w-full overflow-hidden mb-5">
+        <div id="carouselContent" class="flex transition-transform duration-300">
+
+          <div class="flex-shrink-0 w-full">
+            <div class="relative w-full h-full flex items-center justify-center">
+              <img src="/assets/cesta_platanos-BZR9ORgM.jpeg" alt="Product"
+                class="w-auto h-auto max-w-full max-h-full object-contain" />
+            </div>
+          </div>
+
+          <div class="flex-shrink-0 w-full">
+            <div class="relative w-full h-full flex items-center justify-center">
+              <img src="/assets/mojo_canario-CQeaBUkQ.jpg" alt="Product"
+                class="w-auto h-auto max-w-full max-h-full object-contain" />
+            </div>
+          </div>
+
+          <div class="flex-shrink-0 w-full">
+            <div class="relative w-full h-full flex items-center justify-center">
+              <img src="/assets/plato-artesanal-de-ceramica-Ckksa-_I.jpg" alt="Product"
+                class="w-auto h-auto max-w-full max-h-full object-contain" />
+            </div>
+          </div>
+
+          <div class="flex-shrink-0 w-full">
+            <div class="relative w-full h-full flex items-center justify-center">
+              <img src="/assets/pueblo-tipico-isla-fuerteventura-X3uTaQIB.jpg" alt="Product"
+                class="w-auto h-auto max-w-full max-h-full object-contain" />
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flex justify-center mt-2 space-x-2">
+
+          <!-- (idx === activeIndex ? "border-gray-800" : "border-gray-400") -->
+          <button onmouseenter="setActiveIndex(0)" onclick="setActiveIndex(0)"
+            class="p-1 rounded border-2 transition-colors cursor-pointer w-12 h-12">
+            <img src="/assets/cesta_platanos-BZR9ORgM.jpeg" alt="Thumbnail" class="object-cover w-full h-full" />
+          </button>
+
+          <button onmouseenter="setActiveIndex(1)" onclick="setActiveIndex(1)"
+            class="p-1 rounded border-2 transition-colors cursor-pointer w-12 h-12">
+            <img src="/assets/mojo_canario-CQeaBUkQ.jpg" alt="Thumbnail" class="object-cover w-full h-full" />
+          </button>
+
+          <button onmouseenter="setActiveIndex(2)" onclick="setActiveIndex(2)"
+            class="p-1 rounded border-2 transition-colors cursor-pointer w-12 h-12">
+            <img src="/assets/plato-artesanal-de-ceramica-Ckksa-_I.jpg" alt="Thumbnail"
+              class="object-cover w-full h-full" />
+          </button>
+
+          <button onmouseenter="setActiveIndex(3)" onclick="setActiveIndex(3)"
+            class="p-1 rounded border-2 transition-colors cursor-pointer w-12 h-12">
+            <img src="/assets/pueblo-tipico-isla-fuerteventura-X3uTaQIB.jpg" alt="Thumbnail"
+              class="object-cover w-full h-full" />
+          </button>
+
+        </div>
+      </div>
+
+      <script>
+        const carouselContent = document.querySelector("#carouselContent");
+
+        let activeIndex = 0;
+
+        function setActiveIndex(value) {
+
+          activeIndex = Number(value);
+
+          carouselContent.style = `transform: translateX(-${activeIndex * 100}%)`;
+        }
+      </script>
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+      <div class="container mx-auto py-6 px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="space-x-6">
+            <a href="#" class="hover:text-gray-400">
+              Sobre Nosotros
+            </a>
+            <a href="#" class="hover:text-gray-400">
+              Contacto
+            </a>
+            <a href="#" class="hover:text-gray-400">
+              Privacidad
+            </a>
+          </div>
+
+          <div class="mt-4 md:mt-0 text-sm">
+            &copy; 2025 Módulo 1. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- <script type="module" src="/src/"></script> -->
+</body>
+
+</html>

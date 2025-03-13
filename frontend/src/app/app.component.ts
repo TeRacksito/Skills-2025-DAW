@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FullLayoutComponent } from './components/Layouts/full-layout/full-layout.component';
+import { FullLayoutComponent } from './components/layouts/full-layout/full-layout.component';
 
 @Component({
   selector: 'app-root',
