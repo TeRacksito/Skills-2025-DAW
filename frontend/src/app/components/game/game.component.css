@@ -10,10 +10,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  width: 200%; /* Make image wider than container to allow for seamless repetition */
+  width: 200%;
   height: 100%;
-  background-size: 50% 100%; /* Size the image to half the width so it repeats once */
+  background-size: 50% 100%;
   background-position: 0 0;
-  background-repeat: repeat-x; /* Make the background repeat horizontally */
+  background-repeat: repeat-x;
   will-change: transform;
 }
