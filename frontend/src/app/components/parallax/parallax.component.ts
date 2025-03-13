@@ -23,7 +23,7 @@ export class ParallaxComponent {
     // this.ngZone.runOutsideAngular(() => {
     //   this.startAnimationLoop();
     // });
-    // this.startAnimationLoop();
+    this.startAnimationLoop();
   }
 
   startAnimationLoop() {
