@@ -1,0 +1,19 @@
+.parallax-container {
+  perspective: 1px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 200%; /* Make image wider than container to allow for seamless repetition */
+  height: 100%;
+  background-size: 50% 100%; /* Size the image to half the width so it repeats once */
+  background-position: 0 0;
+  background-repeat: repeat-x; /* Make the background repeat horizontally */
+  will-change: transform;
+}
