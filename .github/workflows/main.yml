@@ -17,7 +17,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            echo ${{ secrets.SSH_PRIVATE_KEY }} >> /root/SSH_KEY.TXT
+            echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > /root/SSH_KEY.TXT
             cd /root/projects/Skills-2025-DAW
             git pull origin main
             docker compose down
